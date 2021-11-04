@@ -10,48 +10,50 @@ import UserDetails from "../Components/Login/UserDetails"
 import BagMainPage from '../Components/BagPage/BagMainPage';
 import OrderPlaced from "../Components/BagPage/OrderPlaced.jsx";
 import ProductDetails from '../Components/ProductDetails/ProductDetails';
+import UserProfilePage from './../Components/UserProfilePage/UserProfilePage';
 
 function Routes() {
     return (
-        <div>
-           <Navbar/>
-            <Switch>
-                <Route path="/" exact>
-                    <Home/>
-                </Route>
-                <Route path="/men" exact>
-                    <MensMainPage/>
-                </Route>
+      <div>
+        <Navbar />
+        <Switch>
+          <Route path="/" exact>
+            <Home />
+          </Route>
+          <Route path="/men" exact>
+            <MensMainPage />
+          </Route>
 
-                <Route path="/login" exact>
-                    <Login/>
-                </Route>
-                <Route path="/login/userdetails">
-                    <UserDetails/>
-                </Route>
-                <Route path="/wishlist" exact>
-                    <WishlistMainPage/>
-                </Route>
-                <Route path="/result" exact>
-                    <TShirtMainPage/>
-                </Route>
-                <Route path="/login/userdetails">
-                    <UserDetails/>
-                </Route>
-                <Route path="/cart">
-                    <BagMainPage/>
-                </Route>
-                <Route path="/orderplaced">
-                    <OrderPlaced />
-                </Route>
-                <Route path="/resultpage/:id">
-                   <ProductDetails/>
-                </Route>
-             
-            </Switch>
-            
-        </div>
-    )
+          <Route path="/login" exact>
+            <Login />
+          </Route>
+          <Route path="/login/userdetails">
+            <UserDetails />
+          </Route>
+          <Route path="/wishlist" exact>
+            <WishlistMainPage />
+          </Route>
+          <Route path="/result" exact>
+            <TShirtMainPage />
+          </Route>
+          <Route path="/login/userdetails">
+            <UserDetails />
+          </Route>
+          <Route path="/cart">
+            <BagMainPage />
+          </Route>
+          <Route path="/orderplaced">
+            <OrderPlaced />
+          </Route>
+          <Route path="/resultpage/:id">
+            <ProductDetails />
+          </Route>
+          <Route path="/user-profile/:username" exact>
+            <UserProfilePage />
+          </Route>
+        </Switch>
+      </div>
+    );
 }
 
 export default Routes
