@@ -16,7 +16,7 @@ const UserProfilePage = ({ props }) => {
   const defaultData = {
     username: "shooter@007",
     name: "Shooter Walia",
-    bio: "My Name Is Rock🙂 Mr 🤘Perfect😎 I Love Mom Dad No Attitude I'm Simple🙄",
+    bio: "My Name Is Rock🙂 Mr 🤘Perfect😎 No Attitude I'm Simple🙄",
     link: ["facebook", "twitter", "reddit"],
     visibility: true,
   };
@@ -25,10 +25,12 @@ const UserProfilePage = ({ props }) => {
       <div className="user-detail-container">
         <Avatar facebookId="100008343750912" size="150" round={true} />
         <div className="user-detail">
-          <span>{defaultData.username}</span>
+          <span style={{ fontSize: "30px", fontWeight: "bold" }}>
+            {defaultData.username}
+          </span>
           <span>{defaultData.name}</span>
           <span>{defaultData.bio}</span>
-          <span>
+          <span className="media-links">
             {defaultData.link.map((link) => {
               return <a href="#">{link}</a>;
             })}
@@ -42,8 +44,20 @@ const UserProfilePage = ({ props }) => {
       <div className="user-media">
         <div className="media-options">
           <span>
-            <PhotoLibraryIcon onClick={() => setValue(true)} />
-            <VideoLibraryIcon onClick={() => setValue(false)} />
+            <span className={value ? "active-option" : " "}>
+              <PhotoLibraryIcon
+                sx={{ fontSize: 30 }}
+                onClick={() => setValue(true)}
+                style={{cursor:"pointer"}}
+              />
+            </span>
+            <hr style={{width:"1px", height:"40px", backgroundColor:"black"}}/>
+            <span className={value ? "" : "active-option"}>
+              <VideoLibraryIcon
+                sx={{ fontSize: 30 }}
+                onClick={() => setValue(false)}
+              />
+            </span>
           </span>
         </div>
         <div className="media-container">
