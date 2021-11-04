@@ -20,16 +20,14 @@
 .user-detail span {
   margin: 5px;
 }
-.media-links a {
-  text-decoration: none;
-  color: #f25511;
-  cursor: pointer;
-  margin-right: 10px;
+.user-stats{
+  display: flex;
 }
-.media-links a:hover {
-  color: #ca470f;
+.user-stats span{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
 .user-btn {
   height: 40px;
   width: 100px;

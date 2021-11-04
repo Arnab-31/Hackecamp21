@@ -1,22 +1,35 @@
 import { useState, useEffect } from "react";
 import { createClient } from "pexels";
+import { useHistory } from "react-router-dom";
+import axios from "axios"
 import "./PostGrid.styles.css";
-const PostGrid = () => {
+const PostGrid = ({username}) => {
+  let history = useHistory();
   const [pics, setPics] = useState();
   useEffect(() => {
-    const client = createClient(
-      "563492ad6f917000010000014310a01418d449b18fb334d6afb2f542"
-    );
-    const query = "Fashion Model Men";
+    const options = {
+      url: "https://masai-project.herokuapp.com/product_data",
+      method:"GET"
+    };
+    axios.request(options).then((data) => setPics(data.data));
+  }, []);
 
-    client.photos.search({ query, per_page: 15 }).then((photos) => {
-      console.log(photos);
-      setPics(photos.photos);
-    });
-    console.log("hello")
-  },[]);
-
-  return <div className="post-holder">{pics ? pics.map(pic => {return (<img src={pic.src.original} alt="img" className="post-pic"/>)}):null}</div>;
+  return (
+    <div className="post-container">
+      {pics
+        ? pics.map((pic) => {
+            return (
+              <div className="post-card">
+                <img src={pic.images[0]} alt="img" className="post-pic" onClick={() =>{history.push(`${username}/post/${pic.id}`)}} />
+                <span style={{ background: "transparent" }}>
+                  By: {pic.title}
+                </span>
+              </div>
+            );
+          })
+        : null}
+    </div>
+  );
 };
 
 export default PostGrid;

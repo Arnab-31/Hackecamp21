@@ -28,13 +28,25 @@ const UserProfilePage = ({ props }) => {
           <span style={{ fontSize: "30px", fontWeight: "bold" }}>
             {defaultData.username}
           </span>
-          <span>{defaultData.name}</span>
-          <span>{defaultData.bio}</span>
-          <span className="media-links">
-            {defaultData.link.map((link) => {
-              return <a href="#">{link}</a>;
-            })}
+          <span className="user-stats">
+            <span>
+              <span style={{ fontWeight: "bold", fontSize: "30px" }}>100</span>
+              <span>Posts</span>
+            </span>
+            <span>
+              <span style={{ fontWeight: "bold", fontSize: "30px" }}>100</span>
+              <span>Followers</span>
+            </span>
+            <span>
+              <span style={{ fontWeight: "bold", fontSize: "30px" }}>100</span>
+              <span>Following</span>
+            </span>
           </span>
+
+          <span>{defaultData.name}</span>
+
+          <span>{defaultData.bio}</span>
+
           <span>
             <button className="user-btn">Follow</button>
             <button className="user-btn">Message</button>
@@ -48,10 +60,12 @@ const UserProfilePage = ({ props }) => {
               <PhotoLibraryIcon
                 sx={{ fontSize: 30 }}
                 onClick={() => setValue(true)}
-                style={{cursor:"pointer"}}
+                style={{ cursor: "pointer" }}
               />
             </span>
-            <hr style={{width:"1px", height:"40px", backgroundColor:"black"}}/>
+            <hr
+              style={{ width: "1px", height: "40px", backgroundColor: "black" }}
+            />
             <span className={value ? "" : "active-option"}>
               <VideoLibraryIcon
                 sx={{ fontSize: 30 }}
@@ -61,7 +75,7 @@ const UserProfilePage = ({ props }) => {
           </span>
         </div>
         <div className="media-container">
-          {value ? <PostGrid /> : <VidGrid />}
+          {value ? <PostGrid username={username} /> : <VidGrid />}
         </div>
       </div>
     </div>
