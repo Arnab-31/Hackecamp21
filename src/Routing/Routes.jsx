@@ -11,6 +11,7 @@ import BagMainPage from '../Components/BagPage/BagMainPage';
 import OrderPlaced from "../Components/BagPage/OrderPlaced.jsx";
 import ProductDetails from '../Components/ProductDetails/ProductDetails';
 import ProductFeed from '../Components/ProductFeed/ProductFeed';
+import GeneralFeed from '../Components/GeneralFeed/GeneralFeed';
 
 function Routes() {
     return (
@@ -51,6 +52,8 @@ function Routes() {
                 <Route path="/productfeed/:id">
                    <ProductFeed/>
                 </Route>
+
+              
              
             </Switch>
             

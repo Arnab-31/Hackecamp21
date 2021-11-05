@@ -27,13 +27,18 @@
 
 /* Navigation bar links */
 
-.navLinks{
+.links{
     text-decoration: none;
+    color: black;
+}
+
+.navLinks{
+    text-decoration: none !important;
     color:rgb(40,44,63) ;
     font-size: 13px;
 }
 .navLinks2{
-    text-decoration: none;
+    text-decoration: none !important;
     color:rgb(40,44,63) ;
     font-size: 13.5px;
     margin-left: 20px;

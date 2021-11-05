@@ -63,25 +63,34 @@ const Navtitle = styled.p`
 
 function Navbar() {
     const navData=[
-        {title:"men",
+        {title:"PRODUCTS",
         sub:"Topwear",
         list:["t-shirt","casual shirts","formal Shirts","jackets","Blazers","suits"]},
 
-        {title:"women",
-        sub:"Indian Fusion",
-        list:["kurtas","saree","salvaars","dress materials","Tops","skirts&palazzos"]},
+        // {title:"women",
+        // sub:"Indian Fusion",
+        // list:["kurtas","saree","salvaars","dress materials","Tops","skirts&palazzos"]},
 
-        {title:"kids",
-        sub:"Topwear",
-        list:["t-shirt","shirts","jeans","shorts","trousers","ethnic wear"]},
+        // {title:"kids",
+        // sub:"Topwear",
+        // list:["t-shirt","shirts","jeans","shorts","trousers","ethnic wear"]},
 
-        {title:"home&livings",
-        sub:"Topwear",
-        list:["bedsheets","blankets","bedding sets","bed covers","pillows","pillow covers"]},
+        // {title:"home&livings",
+        // sub:"Topwear",
+        // list:["bedsheets","blankets","bedding sets","bed covers","pillows","pillow covers"]},
 
-        {title:"beauty",
-        sub:"Topwear",
-        list:["lipstick","lip gloss","lip liner","eye liner","kajal","foundation"]}
+        // {title:"beauty",
+        // sub:"Topwear",
+        // list:["lipstick","lip gloss","lip liner","eye liner","kajal","foundation"]},
+
+        // {title:"FEED",
+        // sub:"Available Feeds",
+        // list:["General","Pepe Jeans","Roadster Shirts","Turtle Pants","Highlander Tshirts","Nike Shoes"]}
+    ]
+
+    const navData2=[{title:"FEED",
+    sub:"Available Feeds",
+    list:["General","Pepe Jeans","Roadster Shirts","Turtle Pants","Highlander Tshirts","Nike Shoes"]}
     ]
     let history = useHistory();
     const handleClick=(el)=>{
@@ -101,12 +110,21 @@ function Navbar() {
                             <SearchDiv >
                                 <h5 className={styles.navLinks3}>{item.sub}</h5>
                                 {item.list.map((el,z)=>(<Navtitle onClick={()=>handleClick(el)} className={styles.navLinks2}>{el.toUpperCase()}</Navtitle>))}
-                                {item.list.map((el,z)=>(<Navtitle onClick={()=>handleClick(el)} className={styles.navLinks2}>{el.toUpperCase()}</Navtitle>))}
+                                
                             
                             </SearchDiv>
                             
                             </LinkContainer>
                        ))}
+                    <LinkContainer>
+                        <Link className={styles.navLinks} to={"/productfeed/0"}><h4>FEED</h4></Link>
+                        <SearchDiv >
+                                <h5 className={styles.navLinks3}>Available Feeds</h5>
+                                {navData2[0].list.map((el,z)=>(<Navtitle className={styles.navLinks2}><Link to={`/productfeed/${z}`} className={styles.links}>{el.toUpperCase()}</Link></Navtitle>))}
+                                
+                            
+                        </SearchDiv>
+                    </LinkContainer>
             </NavLinkdiv>
             <NavSearch/>
             <NavRight/> 

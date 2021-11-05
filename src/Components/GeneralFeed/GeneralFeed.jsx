@@ -1,15 +1,13 @@
 import React, { useState } from 'react'
-import { useParams } from 'react-router'
-import styles from "./ProductFeed.module.css"
+import styles from "./GeneralFeed.module.css"
 import Post from '../Post/Post'
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 import Modal from '../Modal/Modal'
 
-function ProductFeed() {
+function GeneralFeed() {
 
     const [show, setShow] = useState(false);
-    let {id} = useParams();
-   
+
    
 
 
@@ -29,16 +27,15 @@ function ProductFeed() {
                <div className={styles.HeaderElement}>
                     <img src="/pic2.jpg" className={styles.productImg}/>
                     <div className={styles.HeaderSubElement}>
-                         <p>Roadster shirt</p>
+                         <p>General</p>
                     </div>
                   
                </div>
                 <div className={styles.HeaderElement2}>
-                    <h2>{id == 0 ? "Feed" : "Product Feed"}</h2>
+                    <h2>Feed</h2>
                 </div>
                 <div>
-                    {id != 0 && <div  className={styles.postButton} onClick = {() => setShow(!show)}>  <img src="" alt="" />Post</div>
-                     }
+                     {/* <div  className={styles.postButton} onClick = {() => setShow(!show)}>  <img src="" alt="" />Post</div> */}
                      
                 </div>
            </div>
@@ -90,4 +87,4 @@ function ProductFeed() {
     )
 }
 
-export default ProductFeed;
+export default GeneralFeed;
