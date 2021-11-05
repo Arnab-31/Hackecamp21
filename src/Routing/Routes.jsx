@@ -10,6 +10,7 @@ import UserDetails from "../Components/Login/UserDetails"
 import BagMainPage from '../Components/BagPage/BagMainPage';
 import OrderPlaced from "../Components/BagPage/OrderPlaced.jsx";
 import ProductDetails from '../Components/ProductDetails/ProductDetails';
+import ProductFeed from '../Components/ProductFeed/ProductFeed';
 
 function Routes() {
     return (
@@ -46,6 +47,9 @@ function Routes() {
                 </Route>
                 <Route path="/resultpage/:id">
                    <ProductDetails/>
+                </Route>
+                <Route path="/productfeed/:id">
+                   <ProductFeed/>
                 </Route>
              
             </Switch>

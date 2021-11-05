@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux'
 import { postWishData } from '../../Redux/Wishlist/action'
 import { postBagData } from '../../Redux/Bag/action'
 import Sizebutton from './Sizebutton'
+import { Link } from 'react-router-dom'
 
 function ProductDetails() {
     const [data, setData]=React.useState({})
@@ -75,7 +76,14 @@ function ProductDetails() {
                 <p>Expires in: 3 hours 40 minutes</p>
                 <p>Coupon Discount: Rs. 300 off (check cart for final savings)</p>
                </div>
+
+               
+
+               <Link to="/productfeed/123" className={styles.feedLink}><div  className={styles.PbuttonBag}>  <img src="" alt="" />PRODUCT FEED</div></Link>
            </div>
+
+
+         
           
          </div>
     )
