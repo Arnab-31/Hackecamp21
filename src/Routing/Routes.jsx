@@ -14,6 +14,7 @@ import UserDetails from "../Components/Login/UserDetails"
 import OrderPlaced from "../Components/BagPage/OrderPlaced.jsx";
 import ProductDetails from '../Components/ProductDetails/ProductDetails';
 import DisplayMedia from './../Components/DisplayMedia/DisplayMedia';
+import LeaderBoard from './../Components/LeaderBoard/LeaderBoard.component';
 
 function Routes() {
     return (
@@ -56,6 +57,9 @@ function Routes() {
           </Route>
           <Route path="/user-profile/:username/:type/:id" exact>
             <DisplayMedia />
+          </Route>
+          <Route path="/leaderboard" exact>
+            <LeaderBoard />
           </Route>
         </Switch>
       </div>
