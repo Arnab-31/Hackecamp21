@@ -32,18 +32,18 @@
   height: 40px;
   width: 100px;
   border-radius: 5px;
-  background-color: #ff912e;
-  color: black;
+  background-color: #FF3F6C;
+  color: white;
   margin-right: 20px;
   outline: none;
-  border: none;
+  border: 1px solid #FF3F6C;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.2s;
 }
 .user-btn:hover {
-  background-color: #f25511;
-  color: white;
+  background-color: white;
+  color:black;
   transition: all 0.2s;
 }
 
@@ -64,6 +64,6 @@
 .active-option {
   display: inline-block;
   position: relative;
-  color: #ff912e;
+  color: #FF3F6C;
   
 }

@@ -42,9 +42,6 @@ const UserProfilePage = ({ props }) => {
               <span>Following</span>
             </span>
           </span>
-
-          <span>{defaultData.name}</span>
-
           <span>{defaultData.bio}</span>
 
           <span>
