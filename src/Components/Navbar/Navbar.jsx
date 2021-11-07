@@ -65,7 +65,7 @@ function Navbar() {
     const navData=[
         {title:"PRODUCTS",
         sub:"Topwear",
-        list:["t-shirt","casual shirts","formal Shirts","jackets","Blazers","suits"]},
+        list:["t-shirt","formal Shirts","jackets","casual shirts","Blazers","suits"]},
 
         // {title:"women",
         // sub:"Indian Fusion",
@@ -106,7 +106,7 @@ function Navbar() {
             <NavLinkdiv>
                        {navData.map((item,j)=>(
                           <LinkContainer key={j}>
-                            <Link className={styles.navLinks} to={`/${item.title}`}><h4>{item.title.toUpperCase()}</h4></Link>
+                            <Link className={styles.navLinks} to={`/result?category=casual+shirts`}><h4>{item.title.toUpperCase()}</h4></Link>
                             <SearchDiv >
                                 <h5 className={styles.navLinks3}>{item.sub}</h5>
                                 {item.list.map((el,z)=>(<Navtitle onClick={()=>handleClick(el)} className={styles.navLinks2}>{el.toUpperCase()}</Navtitle>))}

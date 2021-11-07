@@ -12,6 +12,8 @@ import { useHistory } from "react-router-dom";
 function Login() {
     let history = useHistory();
     const [mobile, setMobile]=React.useState("")
+    const [password, setPassword]=React.useState("")
+    const [login, setLogin]=React.useState(true);
     const [userdetails, setUserdetails]=React.useState([])
     const dispatch = useDispatch()
     const userAuth = useSelector(state => state.loginred.userAuth)
@@ -42,13 +44,13 @@ function Login() {
                     </div>
                     <div className={styles.inputcontainer}>
                         <div>
-                            <span className={styles.heading}>Login</span><span className={styles.heading2}>or</span><span className={styles.heading1}>Signup</span><br/>
+                            {login ? <span className={styles.heading}>Login</span>: <span className={styles.heading1}>Create an Account</span>}<br/>
                             <div className={styles.inputdiv}>
-                                <input className={styles.input1} type="text" value={`+91`} onChange={()=>handleChange()} />
-                                <input onChange={(e)=>setMobile(e.target.value)} value={mobile} className={styles.input2} type="text" placeholder="Mobile Number" />
+                                <input onChange={(e)=>setMobile(e.target.value)} value={mobile} className={styles.input2} type="text" placeholder="Email" />
+                                <input onChange={(e)=>setPassword(e.target.value)} value={password} className={styles.input2} type="text" placeholder="Password" />
                                 <p className={styles.terms}>By continuing, I agree to the <span className={styles.conditions}>Terms of Use</span> & <span className={styles.conditions}>Privacy Policy</span></p> 
                                 <button className={styles.loginbutton} onClick={()=>{handleLogin();history.go(-1)}}>CONTINUE</button>
-                                <p>Have trouble in logging in? <span className={styles.conditions}>Get help</span></p>
+                                {login ? <p>Don't have an account?<span className={styles.conditions} onClick={() => setLogin(false)}>Create one</span></p> : <p>Already have an account?<span className={styles.conditions} onClick={() => setLogin(true)}>Login</span></p> }
                              </div>
                         </div>
 

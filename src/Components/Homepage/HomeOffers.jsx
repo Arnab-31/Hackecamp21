@@ -1,5 +1,5 @@
 import React from 'react'
-import Homeoffer from "./Homepage Images/Offerspage.png"
+import Homeoffer from "./Homepage Images/Offerspage2.png"
 import ExitingDeal from "./Homepage Images/ExitingOffers.png"
 import styles from "./Home.module.css"
 

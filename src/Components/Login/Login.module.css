@@ -70,12 +70,13 @@
     outline: none;
     font-size: 18px;
     padding-left: 10px;
-    border-left: 1px solid grey;
+    border: 1px solid grey;
+    margin-bottom: 10px;
 }
 .inputdiv{
     width: 99%;
     height: 5vh;
-    border: 1px solid grey;
+   
     margin-top:15px;
 }
 /* Terms nd condition */
