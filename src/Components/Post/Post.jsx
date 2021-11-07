@@ -1,31 +1,58 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "./Post.module.css"
 import Modal from '../Modal/Modal';
+import { Link } from 'react-router-dom';
 
-function Post({url}) {
+function Post({url, caption, likes, comments, username, profileURL = null}) {
 
-    const [isLiked, like] = useState(false);
+    //const [isLiked, like] = useState(false);
 
     const [showComments, setShowComments] = useState(false);
+    const [likeCount, setLikeCount] = useState(likes);
+    const [isLiked, setIsLiked] = useState(false);
+    
+    useEffect(() => {
+      }, [likeCount, isLiked]);
+    
+
+    const likePost  = () => {
+        
+        if(isLiked){
+            setLikeCount(parseInt(likeCount) - 1);
+            setIsLiked(false);
+        }else{
+            setLikeCount(parseInt(likeCount) + 1);
+            setIsLiked(true);
+        }
+            
+        
+    }
 
     return (
         <div className={styles.PostMaindiv}>
-           <div className={styles.PostImgdiv} onClick={() => setShowComments(true)}>
-                <img src={url}  className={styles.postPic}/>
-           </div>
+            <div  className={styles.Postdiv}>
+                <div className={styles.PostImgdiv} onClick={() => setShowComments(true)}>
+                    <img src={url}  className={styles.postPic}/>
+                    <div className={styles.captionDiv} >
+                        <p>{caption}</p>
+                    </div>
+            </div>
+            </div>
+          
 
            <div className={styles.PostDetailsDiv}>
-                <div >
-                    <img src="/pic1.jfif" className={styles.profilePic} />
+                <div  className={styles.profileDiv}>
+                    <img src={profileURL ? profileURL : "/profileIcon.png"} className={styles.profilePic} />
+                    <p>{username}</p>
                 </div>
                 <div className={styles.postInfo}>
                     <div className={styles.info}>
-                        {isLiked ?  <img src="https://img.icons8.com/plasticine/48/000000/filled-like.png" className={styles.icon} onClick = {() => like(false)}/> : <img src="https://img.icons8.com/carbon-copy/48/000000/filled-like.png" className={styles.icon} onClick={() => like(true)} /> }
-                        <p>123</p>
+                        {isLiked ?  <img src="https://img.icons8.com/plasticine/48/000000/filled-like.png" className={styles.icon} onClick = {likePost}/> : <img src="https://img.icons8.com/carbon-copy/48/000000/filled-like.png" className={styles.icon} onClick={likePost} /> }
+                        <p>{likeCount}</p>
                     </div>
                     <div className={styles.info} onClick={() => setShowComments(true)}>
                         <img src="https://img.icons8.com/ios/50/000000/topic.png" className={styles.icon2}/>
-                            <p>22</p>
+                            <p>{comments}</p>
                     </div>
                 </div>
            </div>

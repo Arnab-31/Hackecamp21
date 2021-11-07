@@ -47,40 +47,76 @@ function ProductFeed() {
           
             <Masonry columnsCount={3}>
                 <div className={styles.post}>
-                                <Post url="/pic1.jfif" />
+                                <Post url="/pic1.jfif"
+                                    caption = "How is it looking?"
+                                    likes="45"
+                                    comments="12"
+                                    username="Akash Gupta" />
                             </div>
                             <div className={styles.post}>
-                                <Post url="/pic2.jpg" />
+                                <Post url="/pic2.jpg"
+                                     caption = "Feels super comfy"
+                                     likes="25"
+                                     comments="10"
+                                     username="Abhishek Roy" />
                             </div>
 
                             <div className={styles.post}>
-                                <Post url="/pic2.jpg" />
+                                <Post url="/pic2.jpg"
+                                     caption = "Looks great, is isnt?"
+                                     likes="40"
+                                     comments="22"
+                                     username="Karan Singh" />
                             </div>
 
                         
                             <div className={styles.post}>
-                                <Post url="/pic2.jpg" />
+                                <Post url="/pic2.jpg"
+                                     caption = "How is it looking?" 
+                                     likes="1"
+                                     comments="2"
+                                     username="Sagar Shah"/>
                             </div> 
 
                             <div className={styles.post}>
-                                <Post url="/pic1.jfif" />
+                                <Post url="/pic1.jfif"
+                                 caption = "How is it looking?"
+                                 likes="5"
+                                 comments="12"
+                                 username="Suhani Singh" />
                             </div>
 
                             <div className={styles.post}>
-                                <Post url="/pic3.jpg" />
+                                <Post url="/pic3.jpg"
+                                 caption = "How is it looking?" 
+                                 likes="45"
+                                 comments="121"
+                                 username="Tanmay Arora"/>
                             </div>
 
                             <div className={styles.post}>
-                                <Post url="/pic3.jpg" />
+                                <Post url="/pic3.jpg"
+                                 caption = "How is it looking?"
+                                 likes="45"
+                                 comments="12"
+                                 username="Akash Gupta" />
                             </div>
 
                             
                             <div className={styles.post}>
-                                <Post url="/pic1.jfif" />
+                                <Post url="/pic1.jfif" 
+                                    caption = "How is it looking?"
+                                    likes="45"
+                                    comments="12"
+                                    username="Dia Sen" />
                             </div>
 
                             <div className={styles.post}>
-                                <Post url="/pic2.jpg" />
+                                <Post url="/pic2.jpg"
+                                     caption = "How is it looking?"
+                                     likes="45"
+                                     comments="12"
+                                     username="Aritro Das" />
                             </div> 
 
                 </Masonry>

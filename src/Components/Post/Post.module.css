@@ -43,7 +43,37 @@
 }
 .PostImgdiv{
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+
 }
+
+.Postdiv{
+    background-color: white;
+    border: 1px solid #ff3e6c;
+    border-radius: 12px;
+}
+
+.captionDiv p{
+    font-size: 15px;
+    text-align: left;
+    padding: 5px 10px;
+}
+
+.profileDiv{
+    display: flex;
+}
+
+.profileDiv p{
+    vertical-align:middle;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 500;
+}
+
+
 
 
 
